@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
 import { fetchQuotaFromGoogle } from '@/lib/quota-api';
 import { detectProvider, formatModelName } from '@/lib/types';
 
@@ -7,10 +7,7 @@ const CLIENT_ID = process.env.GOOGLE_CLIENT_ID!;
 const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET!;
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-);
+
 
 async function refreshAccessToken(refreshToken: string): Promise<{ access_token: string; expires_at: string } | null> {
   try {
