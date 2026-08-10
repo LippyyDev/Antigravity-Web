@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabase';
+
+export const dynamic = 'force-dynamic';
 
 /**
  * Auto-setup route: creates the required Supabase tables if they don't exist.
@@ -13,10 +15,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Setup only allowed from localhost' }, { status: 403 });
   }
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-  );
 
   const results: Record<string, string> = {};
 
