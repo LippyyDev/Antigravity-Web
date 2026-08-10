@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAdminAuth } from '@/lib/firebase-admin';
 
+export const dynamic = 'force-dynamic';
 // In-memory store for single-use tokens
 // Key: token, Value: { uid, expiresAt }
 const tokenStore = new Map<string, { uid: string; expiresAt: number }>();

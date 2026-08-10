@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
 // Antigravity's own OAuth client credentials (from AntigravityManager source)
 // These are the only credentials that have access to restricted Google scopes:
 // aicode, cclog, experimentsandconfigs
