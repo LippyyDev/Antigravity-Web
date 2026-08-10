@@ -1,0 +1,29 @@
+{
+  "name": "antigravity-web",
+  "version": "1.0.0",
+  "description": "Antigravity Quota Monitor Web App",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
+    "firebase": "^11.9.0",
+    "firebase-admin": "^14.2.0",
+    "lucide-react": "^0.513.0",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.5",
+    "typescript": "^5.8.3"
+  }
+}
